@@ -199,7 +199,7 @@ text
 \section{Projektvorgehen, Organisation \& rechtlicher Rahmen}
 \label{sec:projektvorgehen}
 
-\subsection{(1a) Vorgehen, Beteiligte, Organisations-/Arbeitsstruktur, Standort}
+\subsection{Vorgehen, Beteiligte, Organisations-/Arbeitsstruktur, Standort}
 \begin{aufgabenstellung}
 Stellen Sie dar, wie Sie dieses Projekt angehen, insbesondere in Bezug auf Beteiligte, Organisations-/Arbeitsstruktur und Standort. Verwenden Sie hierzu Stärken-Schwächen-Analysen oder auch Nutzwertanalysen. \textbf{(8 Punkte)}
 \end{aufgabenstellung}
@@ -207,59 +207,66 @@ Stellen Sie dar, wie Sie dieses Projekt angehen, insbesondere in Bezug auf Betei
 \vspace*{5mm}
 
 \subsubsection{Zielbild \& Annahmen}
-% Kurz die Projektziele, Scope, Randbedingungen und Erfolgskriterien skizzieren.
+Ziel ist der Aufbau und die Markteinführung eines eingebetteten Fahrerassistenzmoduls (Kernfunktion: intelligente Scheibenwischersteuerung mit Regensensoranbindung sowie optionale Verkehrszeichenerkennung als Upgrade). Fokusmärkte: DACH und Asien (u.\,a. Hongkong). Time-to-Market: MVP in 12~Monaten, Serienreife in 24~Monaten. Erfolgskriterien: Validierter Produkt-Markt-Fit (mind. drei Pilotkunden), Bruttomarge $>50\,\%$ ab Jahr~3, positive operative Cashflows ab Jahr~3.
 
 \subsubsection{Stakeholderanalyse}
-% Primäre/sekundäre Stakeholder, Rollen, Erwartungshaltungen, Einfluss/Macht
 \begin{itemize}
-  \item \textbf{Primär:} Kunde, Endnutzer, Projektauftraggeber, Kernteam
-  \item \textbf{Sekundär:} Lieferanten, Partner, Regulierungsbehörden, interne Supportfunktionen
+  \item \textbf{Primäre Stakeholder:} OEMs/Flottenbetreiber (Kunden), Endnutzer (Fahrer), Projektauftraggeber, Kernteam (Produkt, Hardware, Embedded, ML, Vertrieb).
+  \item \textbf{Sekundäre Stakeholder:} Lieferanten (Sensorik, Steuergerätefertigung), Integrationspartner, Zertifizierer/Behörden, Investoren, Servicepartner.
 \end{itemize}
 
 \subsubsection{Organisations- \& Arbeitsstruktur}
-% Organigramm (Linie/Matrix), RACI, Entscheidungs- und Eskalationswege
-% Hinweis auf iteratives/vs. stage-gate Vorgehen, Tools, Meetings, KPIs
+Hybrid aus \emph{agiler Produktentwicklung} (Scrum/Kanban) und \emph{Stage-Gate} (für Muster A/B/C, Zulassung, Serienfreigabe). Klare Verantwortlichkeiten per RACI:
+\begin{itemize}
+  \item \textbf{Produktmanagement (A)}: Anforderungsklärung, Roadmap, Business Case.
+  \item \textbf{Engineering HW/SW (R)}: Architektur, Entwicklung, Verifikation.
+  \item \textbf{Qualität/Regulatory (C)}: Normen, Tests, Functional Safety.
+  \item \textbf{Operations (R)}: Supply Chain, Fertiger, Logistik.
+  \item \textbf{Vertrieb/Partnerschaften (R)}: Pilotkunden, Rahmenverträge.
+\end{itemize}
+Kernrituale: 2-wöchige Sprints, monatliches Lenkungsgremium (Gate-Reviews), quartalsweise Portfolio-/Budget-Review. KPIs: Meilensteinerfüllung, Fehlerrate (DPPM), Bruttomarge, Burn Rate, Auftragseingang.
 
 \subsubsection{Standortwahl}
-% Kriterien (Nähe Kunde, Talente, Kosten, Regulierung, IP-Schutz, Logistik, Zeitzonen, Förderungen)
+Kriterien: Kundennähe, Talentpool (Embedded/ML), Kosten, IP-Schutz, Zeitzonenabdeckung, Förderungen. Zielsetup: \emph{Engineering-Hub} (DACH), \emph{Fertigungspartner} (EU/Osteuropa), \emph{Business Development Node} in Asien.
 
 \subsubsection{Stärken-Schwächen-Analyse (SWOT)}
-% SWOT auf Unternehmensebene oder Projekt-Setup
 \begin{table}[htb!]
 \centering
 \caption{SWOT-Analyse Projektsetup}
 \begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
 \textbf{Stärken (S)} & \textbf{Schwächen (W)} \\
 \hline
-% ...
-& \\
+Erfahrenes Embedded/ADAS-Team, modulare Architektur, kurze Entscheidungswege &
+Begrenzte Kapitaldecke in Phase~1, geringe Markenbekanntheit, Zulassungserfahrung begrenzt \\
 \textbf{Chancen (O)} & \textbf{Risiken (T)} \\
 \hline
-% ...
-& \\
+Wachsender ADAS-Nachrüstmarkt, Partnerschaften mit Tier-1, Förderprogramme &
+Lieferkettenvolatilität, regulatorische Verzögerungen, starke OEM-Bindung an incumbents \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Nutzwertanalyse (z.\,B. Standort- oder Organisationsoptionen)}
-% Kriterien, Gewichtungen, Bewertungsskala, Gesamtnutzen je Option
+\subsubsection{Nutzwertanalyse: Organisations- \& Standortoptionen}
 \begin{table}[htb!]
 \centering
-\caption{Nutzwertanalyse Standort-/Organisationsoptionen}
+\caption{Nutzwertanalyse (Gewichte summieren sich zu 1{,}00)}
 \begin{tabular}{l r r r r}
-\textbf{Kriterium} & \textbf{Gew.} & \textbf{Option A} & \textbf{Option B} & \textbf{Option C} \\
+\textbf{Kriterium} & \textbf{Gew.} & \textbf{A: DACH Hub} & \textbf{B: Nearshore EU} & \textbf{C: Asien Hub} \\
 \hline
-% Beispiel: Talentpool & 0.25 & 4 & 3 & 5
-% ...
-\multicolumn{2}{l}{\textbf{Gesamtnutzen}} & & & \\
+Talentverfügbarkeit & 0{,}25 & 5 & 3 & 4 \\
+Kundennähe (OEM/Flotte) & 0{,}25 & 4 & 3 & 4 \\
+Kostenbasis & 0{,}20 & 3 & 4 & 4 \\
+IP-/Rechtsrahmen & 0{,}15 & 5 & 4 & 3 \\
+Zeitzonenabdeckung & 0{,}15 & 3 & 3 & 5 \\
+\hline
+\textbf{Gesamtnutzen (Skala 1–5)} & 1{,}00 & \textbf{4{,}1} & 3{,}5 & 4{,}2 \\
 \end{tabular}
 \end{table}
-
 \paragraph{Begründung}
-% Detaillierte Begründung der getroffenen Wahl auf Basis der Analysen.
+Kombinationsansatz (C+ A): Engineering \& IP-Führung in DACH (4{,}1), Business-/Partnerpräsenz in Asien (4{,}2) für Kundennähe \& Time-to-Market; Kosten werden durch Nearshore-Fertigung abgefedert.
 
 \clearpage
 
-\subsection{(1b) Rechtlicher Rahmen (Organisationsform \& Patente)}
+\subsection{Rechtlicher Rahmen (Organisationsform \& Patente)}
 \begin{aufgabenstellung}
 Wie sieht ein möglicher rechtlicher Rahmen für das Projekt aus (Organisationsform, Patentsituation)? Ergänzen Sie dabei die gemachten Angaben nach Ihren Bedürfnissen. \textbf{(8 Punkte)}
 \end{aufgabenstellung}
@@ -267,17 +274,16 @@ Wie sieht ein möglicher rechtlicher Rahmen für das Projekt aus (Organisationsf
 \vspace*{5mm}
 
 \subsubsection{Organisations-/Gesellschaftsform}
-% Optionen (z.B. GmbH, AG, JV), Haftung, Kapitalbedarf, Governance, Steueraspekte
+Empfohlen: \textbf{GmbH} als operative Einheit (Haftungsbegrenzung, Flexibilität), perspektivisch Holding-Struktur für IP-Bündelung und Investmentfähigkeit (Option auf Umwandlung in AG beim Skalieren). Governance: Beirat mit Veto bei Budget, IP-Veräußerung, Kapitalmaßnahmen.
 
 \subsubsection{IP-/Patentsituation}
-% Freedom-to-Operate, Prior-Art-Suche, Schutzrechte (Patente, Marken, Designs), Lizenzstrategien, NDA, Arbeitnehmererfindungen
+Freedom-to-Operate (FTO) vor Start; Anmeldung von \emph{Gebrauchsmuster/Patenten} für Sensorfusion, adaptive Wischlogik und effiziente Motorsteuerung; Markenanmeldung (EUIPO); Schutz von Trainingsdaten (Urheber-/Datenbankrecht). Lizenzstrategie: Cross-Licensing mit Tier-1, OEM-Source-Code-Escrow, NDAs und Arbeitnehmererfinderregelungen.
 
 \subsubsection{Compliance \& Regulatorik}
-% Branchenstandards, Exportkontrollen, Datenschutz, Produktsicherheit, Zertifizierungen
+Beachtung Produktsicherheit (z.\,B. Maschinen-/Fahrzeugrichtlinien), EMV, funktionale Sicherheit (Anlehnung an ISO-Prinzipien), Datenschutz (Kamera/TSR: Datensparsamkeit, Edge-Processing), Exportkontrollen.
 
 \paragraph{Begründung}
-% Warum diese Rechts-/Organisationsform und IP-Strategie zum Vorhaben passt.
-
+Die Struktur minimiert Haftungs- und IP-Risiken, hält Finanzierungspfade offen und erleichtert Partnerschaften; IP-Schutz schafft Verhandlungshebel gegenüber Tier-1/OEMs.
 
 % ----------------------------------------------------------------------------------------------------------
 % Kapitel 2: Marktanalyse & Eintrittsstrategie
@@ -285,35 +291,41 @@ Wie sieht ein möglicher rechtlicher Rahmen für das Projekt aus (Organisationsf
 \section{Marktanalyse \& Eintrittsstrategie}
 \label{sec:marktanalyse}
 
-\subsection{(2a) Marktanalyse \& kritische Erfolgsfaktoren}
+\subsection{Marktanalyse \& kritische Erfolgsfaktoren}
 \begin{aufgabenstellung}
 Entwickeln Sie auf Basis einer umfassenden Marktanalyse (Porter 5 Forces, Umgebungsanalyse, Value Chain Analysis o.\,Ä.) kritische Erfolgsfaktoren für das Projekt. \textbf{(16 Punkte)}
 \end{aufgabenstellung}
 
 \vspace*{5mm}
 
-\subsubsection{Porter Five Forces}
-% Käufermacht, Lieferantenmacht, Ersatzprodukte, Markteintrittsbarrieren, Rivalität
-% ggf. Abbildung
-% \begin{figure}[htb!]\centering\includegraphics[width=0.9\linewidth]{Images/porter.pdf}\caption{Porter Five Forces}\label{fig:porter}\end{figure}
+\subsubsection{Porter Five Forces (Kurzbewertung)}
+\begin{itemize}
+  \item \textbf{Rivalität}: Mittel–hoch (Tier-1, Aftermarket-Anbieter). Differenzierung über Softwareupdates \& Service.
+  \item \textbf{Bedrohung durch Neueintritte}: Mittel (Kapitalbedarf moderat, aber Zulassungs-/Qualitätshürden).
+  \item \textbf{Ersatzprodukte}: Mittel (OEM-Serienfunktionen, günstigere Sensorlösungen).
+  \item \textbf{Käufermacht}: Hoch (OEMs mit Volumen- \& Preismacht; Flotten mit TCO-Fokus).
+  \item \textbf{Lieferantenmacht}: Mittel (Schlüsselkomponenten: Sensoren, MCUs).
+\end{itemize}
 
-\subsubsection{Umgebungsanalyse (z.\,B. PESTEL)}
-% Political, Economic, Social, Technological, Environmental, Legal
+\subsubsection{Umgebungsanalyse (PESTEL)}
+Politisch: Förderprogramme, Lokalisierungsvorgaben. Ökonomisch: Zinsniveau, volatile Lieferketten. Sozial: Sicherheit/Komfort als Kaufargument. Technologisch: günstige Rechenleistung, ML-Edge. Ökologisch: Wischer-Effizienz \& Sicht -> Sicherheit. Rechtlich: Produkthaftung, Datenschutz (Kamera).
 
 \subsubsection{Value Chain Analysis}
-% Primär- und Unterstützungsaktivitäten, Wo entsteht differenzierender Wert?
+Werttreiber: Firmware/Algorithmen (IP-Kern), Systemintegration (Qualität/EMV), Feld-Telemetrie \& OTA-Updates (Servicebindung). Nicht-Kerntätigkeiten (Fertigung) an EMS-Partner auslagern.
 
 \subsubsection{Kritische Erfolgsfaktoren (KEF)}
 \begin{itemize}
-  \item KEF~1: % ...
-  \item KEF~2: % ...
-  \item KEF~3: % ...
+  \item \textbf{KEF~1:} Überlegene Wisch-Performance bei variabler Regenintensität (messbar via Sichtzeit/Noise).
+  \item \textbf{KEF~2:} Zulassungs- \& Qualitätskonformität (Feldfehler $<300$~DPPM ab Jahr~2).
+  \item \textbf{KEF~3:} Skalierbare Lieferkette (Dual-Sourcing für Sensoren/MCUs).
+  \item \textbf{KEF~4:} Kommerzielle Traktion (3 Pilotkunden, 2 Seriennominationen bis Ende Jahr~2).
+  \item \textbf{KEF~5:} Software-first: OTA-Updatefähigkeit und Datengetriebene Iteration.
 \end{itemize}
 
 \paragraph{Begründung}
-% Herleitung der KEF direkt aus den Analysen, Messgrößen/KPIs definieren.
+KEF direkt aus Forces/PESTEL abgeleitet: Differenzierung, Risikoreduktion in Supply, regulative Absicherung und schneller Marktzugang sind für Preis- \& Marge entscheidend.
 
-\subsection{(2b) Eintrittsoptionen, Bewertung, Empfehlung \& Back-up}
+\subsection{Eintrittsoptionen, Bewertung, Empfehlung \& Back-up}
 \begin{aufgabenstellung}
 Stellen Sie mögliche Eintrittsoptionen in den Markt dar und bewerten Sie diese entsprechend. Was ist Ihre Empfehlung und warum? Was planen Sie als Back-up-Lösung? \textbf{(9 Punkte)}
 \end{aufgabenstellung}
@@ -321,27 +333,236 @@ Stellen Sie mögliche Eintrittsoptionen in den Markt dar und bewerten Sie diese 
 \vspace*{5mm}
 
 \subsubsection{Eintrittsoptionen}
-% Greenfield, Partnerschaft/Allianz, Lizenz/Franchising, Joint Venture, M\&A, Plattform/Marketplace
+\begin{itemize}
+  \item \textbf{O1 Greenfield Aftermarket}: Direkter Vertrieb an Flotten/Workshops.
+  \item \textbf{O2 Partnerschaft mit Tier-1}: Co-Branding, Integration in bestehende Wischer-/Body-ECUs.
+  \item \textbf{O3 Lizenzierung an OEM/Tier-1}: IP-/Softwarelizenz, geringer Capex, geringere Kontrolle.
+\end{itemize}
 
-\subsubsection{Bewertung (Nutzwert-/Risiko-Nutzen-Matrix)}
+\subsubsection{Bewertung (Nutzwertmatrix)}
 \begin{table}[htb!]
 \centering
-\caption{Bewertung Markteintrittsoptionen}
+\caption{Bewertung Markteintrittsoptionen (1=schlecht, 5=sehr gut)}
 \begin{tabular}{l r r r r}
-\textbf{Kriterium} & \textbf{Gew.} & \textbf{Option 1} & \textbf{Option 2} & \textbf{Option 3} \\
+\textbf{Kriterium} & \textbf{Gew.} & \textbf{O1} & \textbf{O2} & \textbf{O3} \\
 \hline
-% Time-to-Market, CAPEX/OPEX, regulatorisches Risiko, Skalierbarkeit, Kontrolle, Marge
-\multicolumn{2}{l}{\textbf{Gesamtscore}} & & & \\
+Time-to-Market & 0{,}25 & 4 & 3 & 5 \\
+Marge & 0{,}20 & 4 & 3 & 3 \\
+Skalierung & 0{,}20 & 3 & 5 & 5 \\
+Regulatorisches Risiko & 0{,}15 & 4 & 4 & 5 \\
+Kontrolle \& Marke & 0{,}10 & 5 & 3 & 2 \\
+CAPEX/OPEX & 0{,}10 & 3 & 3 & 5 \\
+\hline
+\textbf{Gesamtscore} & 1{,}00 & 3{,}9 & \textbf{3{,}95} & 4{,}45 \\
 \end{tabular}
 \end{table}
 
 \subsubsection{Empfehlung}
-% Gewählte Option, Roadmap, Meilensteine, Erfolgskriterien
+\textbf{Primär O3 (Lizenzierung)} für schnellen Zugang \& geringeren Kapitalbedarf; parallel \textbf{O2 (Partnerschaft)} zur Skalierung/Validierung. \textbf{Back-up:} O1 in Nischen (Kommunalflotten) als Revenue-Bridge, falls O3/O2 verzögern.
 
-\subsubsection{Back-up-Strategie}
-% Alternativpfad bei Scheitern, Abbruch-/Pivot-Kriterien, Verwässerungs- und Kostenrahmen
+\paragraph{Begründung}
+Lizenz \& Partnernetz minimieren Zeit \& Risiko; O1 schafft Lerneffekte und Referenzen ohne große Vertriebsstruktur.
 
 \clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 3: Marketing-/Entwicklungsplan & Positionierung
+% ----------------------------------------------------------------------------------------------------------
+\section{Marketing-/Entwicklungsplan \& Positionierung}
+\label{sec:marketing_plan}
+
+\subsection{Plan auf Basis Positionierung \& Segmentierung; Portfolioszenarien}
+\begin{aufgabenstellung}
+Erstellen Sie auf Grundlage der in Aufgabe 2 ermittelten Marktpositionierung und auf Basis einer Zielgruppensegmentierung einen Marketing-/Entwicklungsplan. Zeigen Sie mögliche Portfolioszenarien (Produkt, Preis, Service) auf. \textbf{(15 Punkte)}
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsubsection{Zielgruppensegmentierung}
+\begin{table}[htb!]
+\centering
+\caption{Segmentübersicht}
+\begin{tabular}{l r r l}
+\textbf{Segment} & \textbf{Volumen} & \textbf{Wachstum} & \textbf{Kernbedürfnisse} \\
+\hline
+OEM (Neufahrzeuge) & hoch & mittel & Normkonformität, Zuverlässigkeit, Kosten/Unit \\
+Flotten/Aftermarket & mittel & hoch & TCO, einfache Nachrüstung, Service \\
+Premium/Bus/Kommunal & niedrig & mittel & Safety/Verfügbarkeit, SLA, Integrationen \\
+\end{tabular}
+\end{table}
+
+\subsubsection{Positionierung}
+``Adaptive Wischleistung und Sicht bei jedem Wetter'' --- messbar bessere Sichtzeiten, OTA-Verbesserungen, zertifizierte Qualität. Reason-to-Believe: Pilotdaten, unabhängige Tests, KPIs (DPPM, MTBF).
+
+\subsubsection{Marketing-/Go-to-Market-Plan}
+Kanäle: Partner-Co-Selling (Tier-1), Referenzpiloten, Messen \& Normgremien, technische Whitepaper, Field Trials. Funnel: 6–9~Monate Sales-Cycle (OEM), 3–6~Monate (Flotte). Budgetfokus: technische Vorführung, Musterkits, Integrationssupport. KPIs: qualifizierte Leads, Pilot-Konversionsrate, CAC:LTV.
+
+\subsubsection{Entwicklungsplan (Roadmap)}
+MVP (Monat~0–12): Basisregelung, Telemetrie, OTA. V1 (12–18): Robustheit, Zulassungs- \& EMV-Tests. V2 (18–24): Option TSR-Upgrade, erweiterte Diagnostik. Gates: A/B/C-Muster, PPAP/Serienfreigabe.
+
+\subsubsection{Portfolioszenarien (Produkt, Preis, Service)}
+\begin{table}[htb!]
+\centering
+\caption{Portfolioszenarien}
+\begin{tabular}{l l l l}
+\textbf{Szenario} & \textbf{Produktbündel} & \textbf{Preislogik} & \textbf{Servicelevel} \\
+\hline
+Basis & Wischsteuerung + Sensor & Einmalpreis + Wartung & E-Mail-Support, Updates halbjährlich \\
+Premium & + Telemetrie/OTA & Lizenz/Jahr + Setup & Prior-Support, Quartalsupdates \\
+Enterprise & + TSR, Integrationen & Rahmenvertrag/Volumen & SLA 24/7, dedizierter TAM \\
+\end{tabular}
+\end{table}
+
+\paragraph{Begründung}
+Segment- \& Portfoliologik maximiert Deckungsbeitrag je Kundentyp, erlaubt Upsell (TSR) und planbare Serviceumsätze.
+
+\subsection{(3b) Kundenerreichung \& USP-Statement}
+\begin{aufgabenstellung}
+Wie stellen Sie sicher, dass Sie Ihre Kunden erreichen? Formulieren Sie eine kurze, zusammenfassende Darstellung des Alleinstellungsmerkmals zur gewünschten Positionierung auf Basis der analysierten Segmentierung. \textbf{(5 Punkte)}
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsubsection{Kanalstrategie \& Abdeckung}
+\begin{itemize}
+  \item \textbf{OEM/Tier-1:} Technische Evaluierungen, Referenzfahrzeuge, Co-Entwicklung.
+  \item \textbf{Flotten:} Pilotprojekte, Installation durch Servicepartner, \mbox{ROI-Case} (TCO, Ausfallreduktion).
+  \item \textbf{Kommunal/Bus:} Ausschreibungen, SLAs, Zuverlässigkeitsnachweise.
+\end{itemize}
+
+\subsubsection{USP (Kurzstatement)}
+Für \textbf{Flotten und OEMs}, die \textbf{Sichtbarkeit und Verfügbarkeit bei jedem Wetter} erhöhen wollen, bietet \textbf{unser adaptives Wischsystem} \textbf{messbar bessere Sichtzeiten und OTA-Verbesserungen} --- im Gegensatz zu konventionellen Lösungen, weil \textbf{unsere Sensorfusion und Software-Updates Feldperformance kontinuierlich steigern}.
+
+\paragraph{Begründung}
+Nachweisbare Performance \& Updates adressieren die stärksten Kaufmotive (Sicherheit, TCO) und schaffen Lock-in.
+
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 4: Finanzplanung & Finanzierung
+% ----------------------------------------------------------------------------------------------------------
+\section{Finanzplanung \& Finanzierung}
+\label{sec:finanzplanung}
+
+\begin{aufgabenstellung}
+Stellen Sie anhand Ihrer Finanzplanung (z.\,B. GuV, Cashflow, Bilanz in Tabellenform) dar, welche Mindestinvestitionssumme von Dritten eingebracht werden muss. Erklären Sie in kurzen Worten, welche Finanzierungsmöglichkeiten Ihnen zur Verfügung stehen und welche Vor- und Nachteile diese haben. \textbf{(25 Punkte)}
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsection{Plan-GuV (4 Jahre)}
+\begin{table}[htb!]
+\centering
+\caption{Plan-GuV (in Mio.\,EUR)}
+\begin{tabular}{l r r r r}
+\textbf{Position} & \textbf{Jahr 1} & \textbf{Jahr 2} & \textbf{Jahr 3} & \textbf{Jahr 4} \\
+\hline
+Umsatz & 0{,}60 & 2{,}00 & 6{,}00 & 12{,}00 \\
+COGS (30\,\%) & 0{,}18 & 0{,}60 & 1{,}80 & 3{,}60 \\
+\textbf{Bruttoergebnis} & \textbf{0{,}42} & \textbf{1{,}40} & \textbf{4{,}20} & \textbf{8{,}40} \\
+OPEX (F\&E, Vertrieb, Allg.) & 1{,}50 & 2{,}50 & 3{,}50 & 5{,}00 \\
+\textbf{EBITDA} & \textbf{-1{,}08} & \textbf{-1{,}10} & \textbf{0{,}70} & \textbf{3{,}40} \\
+Abschreibungen & 0{,}20 & 0{,}30 & 0{,}40 & 0{,}50 \\
+EBIT & -1{,}28 & -1{,}40 & 0{,}30 & 2{,}90 \\
+Zinsen/Steuern (netto) & -0{,}02 & -0{,}05 & -0{,}05 & -0{,}60 \\
+\textbf{Jahresüberschuss} & \textbf{-1{,}30} & \textbf{-1{,}45} & \textbf{0{,}25} & \textbf{2{,}30} \\
+\end{tabular}
+\end{table}
+
+\subsection{Cashflow-Plan}
+\begin{table}[htb!]
+\centering
+\caption{Cashflow (in Mio.\,EUR)}
+\begin{tabular}{l r r r r}
+\textbf{Position} & \textbf{Jahr 1} & \textbf{Jahr 2} & \textbf{Jahr 3} & \textbf{Jahr 4} \\
+\hline
+Operativer Cashflow & -1{,}00 & -1{,}20 & 0{,}60 & 2{,}50 \\
+Investitions-Cashflow (CAPEX) & -0{,}80 & -0{,}70 & -0{,}50 & -0{,}50 \\
+Finanzierungs-Cashflow & \textbf{2{,}00} & \textbf{2{,}00} & 0{,}00 & 0{,}00 \\
+\textbf{Netto-Cashflow} & \textbf{0{,}20} & \textbf{0{,}10} & \textbf{0{,}10} & \textbf{2{,}00} \\
+Kassenbestand (Ende) & 0{,}20 & 0{,}30 & 0{,}40 & 2{,}40 \\
+\end{tabular}
+\end{table}
+
+\subsection{Bilanz (verkürzt, Ende Jahr 2)}
+\begin{table}[htb!]
+\centering
+\caption{Bilanz (Ende Jahr 2, in Mio.\,EUR)}
+\begin{tabular}{l r l r}
+\multicolumn{2}{c}{\textbf{Aktiva}} & \multicolumn{2}{c}{\textbf{Passiva}} \\
+\hline
+Anlagevermögen & 1{,}00 & Eigenkapital & 0{,}50 \\
+Umlaufvermögen (inkl. Cash) & 0{,}70 & Fremdkapital kurz/lang & 1{,}20 \\
+Kassenbestand & 0{,}30 & Rückstellungen & 0{,}30 \\
+\textbf{Summe Aktiva} & \textbf{2{,}00} & \textbf{Summe Passiva} & \textbf{2{,}00} \\
+\end{tabular}
+\end{table}
+
+\subsection{Kapitalbedarf \& Mindestinvestitionssumme}
+Die kumulierten negativen freien Cashflows (operativ + Invest) in Jahr~1 und~2 betragen \textbf{2{,}00 + 1{,}90 = 3{,}90\,Mio.\,EUR}. Um jederzeitige Liquidität und Working-Capital-Spitzen abzudecken, wird ein Sicherheitsaufschlag von \textbf{15\,\%} angesetzt. Daraus ergibt sich eine \textbf{Mindestinvestitionssumme von 4{,}50\,Mio.\,EUR} von Dritten (runde Aufteilung: 3{,}0\,Mio.\,Eigenkapital, 1{,}5\,Mio.\,Venture-Debt/öffentliches Darlehen). Die in der obigen Tabelle gezeigten 4{,}00\,Mio.\,EUR stellen die \emph{absolute Unterkante} dar; die Empfehlung ist \textbf{4{,}50\,Mio.\,EUR}, um Planunsicherheiten (Lieferzeiten, Testschleifen) zu puffern.
+
+\subsection{Finanzierungsoptionen: Vor- \& Nachteile}
+\begin{table}[htb!]
+\centering
+\caption{Finanzierungsinstrumente im Vergleich}
+\begin{tabular}{l l l}
+\textbf{Instrument} & \textbf{Vorteile} & \textbf{Nachteile} \\
+\hline
+Eigenkapital (VC/BA) & Risikoteilung, Netzwerk, Flexibilität & Verwässerung, Governance-Auflagen \\
+Venture Debt/Bankdarlehen & Geringere Verwässerung, Laufzeit planbar & Covenants, Zins-/Tilgungsdruck \\
+Fördermittel/Zuschüsse & Nicht-verwässernd, Image/Validierung & Antragsaufwand, Mittelbindung \\
+Wandel-/Mezzanine & Flexibel, Brücke zu Runde~A & Komplexität, Bewertungsmechanik \\
+Crowdfunding (B2C/Nische) & Marketingeffekt, Community & Liefer-/Reputationsrisiko, nicht für OEM \\
+\end{tabular}
+\end{table}
+\paragraph{Begründung}
+Ein ausgewogener Mix sichert Liquidität, minimiert Verwässerung und hält Geschwindigkeit bei Zulassung/Skalierung.
+
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 5: Ablehnung Hongkong – Ursachen, Risiken, Präventionsmaßnahmen
+% ----------------------------------------------------------------------------------------------------------
+\section{Ablehnung Hongkong – Ursachen, Risiken, Präventionsmaßnahmen}
+\label{sec:hongkong_risiken}
+
+\begin{aufgabenstellung}
+Sie haben den Zuschlag für das Projekt in Hongkong leider nicht bekommen (nur 2. Sieger) und stehen vor einem potenziellen finanziellen Scherbenhaufen – erklären Sie mögliche Gründe der Ablehnung (mindestens 3). Welche zusätzlichen Risiken können während des Bieterverfahrens aufgetreten sein? Erklären Sie, welche möglichen Risikominimierungsmaßnahmen Sie daher für Ihr Projekt besser vorab etabliert hätten?
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsection{Mögliche Ablehnungsgründe (mind. 3)}
+\begin{itemize}
+  \item \textbf{Preis-/TCO-Nachteil} gegenüber lokal verankerten Anbietern oder Tier-1 mit Skalenvorteilen.
+  \item \textbf{Zulassungs-/Compliance-Bedenken} (lokale Normen, Datenschutz bei Kamera/TSR).
+  \item \textbf{Liefer-/Servicefähigkeit} (SLA, Ersatzteilverfügbarkeit, lokale Präsenz) als zu schwach bewertet.
+  \item (optional) \textbf{IP-/Datenhaltung} (On-Prem-/Region-Cloud-Vorgaben) nicht hinreichend adressiert.
+\end{itemize}
+
+\subsection{Zusätzliche Risiken im Bieterverfahren}
+Währungs-/Länderrisiko, Abhängigkeit von Einzelzulieferern, Scope Creep in Lastenheften, Vertragsklauseln (Haftung/Strafzahlungen), Import-/Zollthemen, politische Sensitivitäten, verlängerte Zahlungsziele (Liquiditätsrisiko).
+
+\subsection{Risikominimierung (präventiv/proaktiv)}
+\begin{table}[htb!]
+\centering
+\caption{Risikoregister (Auszug)}
+\begin{tabular}{l l l l}
+\textbf{Risiko} & \textbf{Einfluss} & \textbf{Wahrsch.} & \textbf{Maßnahmen (präventiv/reagierend)} \\
+\hline
+Preisunterbietung & hoch & mittel & Vorverhandelte Stückpreisskalen, lokaler EMS, Value-Argumentation (TCO) \\
+Compliance lokal & hoch & mittel & Frühzeitige Gap-Analyse, lokale Partner/Consultants, Audit-Doku \\
+Lieferfähigkeit & hoch & mittel & Dual-Sourcing, Sicherheitsbestand, lokales Ersatzteillager \\
+Scope Creep & mittel & hoch & Change-Control, Meilensteinverträge, Cap auf unbezahlte Aufwände \\
+Zahlungsverzug & mittel & mittel & Akkreditive, Meilenstein-/Abnahmezahlungen, Kreditversicherung \\
+\end{tabular}
+\end{table}
+
+\paragraph{Begründung}
+Mit lokalen Partnern, belastbaren SLAs, pre-negotiated Supply \& klarer Contract Governance sinken Ablehnungs- und Projektausfallrisiken signifikant. Lessons Learned: Lokale Präsenz früher aufbauen, Referenzen in der Region sichern, Compliance by Design.
+
+\clearpage
+
 
 % ----------------------------------------------------------------------------------------------------------
 % Kapitel 3: Marketing-/Entwicklungsplan \& Positionierung
@@ -349,7 +570,7 @@ Stellen Sie mögliche Eintrittsoptionen in den Markt dar und bewerten Sie diese 
 \section{Marketing-/Entwicklungsplan \& Positionierung}
 \label{sec:marketing_plan}
 
-\subsection{(3a) Plan auf Basis Positionierung \& Segmentierung; Portfolioszenarien}
+\subsection{Plan auf Basis Positionierung \& Segmentierung; Portfolioszenarien}
 \begin{aufgabenstellung}
 Erstellen Sie auf Grundlage der in Aufgabe 2 ermittelten Marktpositionierung und auf Basis einer Zielgruppensegmentierung einen Marketing-/Entwicklungsplan. Zeigen Sie mögliche Portfolioszenarien (Produkt, Preis, Service) auf. \textbf{(15 Punkte)}
 \end{aufgabenstellung}
@@ -394,7 +615,7 @@ Erstellen Sie auf Grundlage der in Aufgabe 2 ermittelten Marktpositionierung und
 \paragraph{Begründung}
 % Warum diese Segmente/Positionierung/Portfolio; Bezug zu KEF und Marktanalyse.
 
-\subsection{(3b) Kundenerreichung \& USP-Statement}
+\subsection{Kundenerreichung \& USP-Statement}
 \begin{aufgabenstellung}
 Wie stellen Sie sicher, dass Sie Ihre Kunden erreichen? Formulieren Sie eine kurze, zusammenfassende Darstellung des Alleinstellungsmerkmals zur gewünschten Positionierung auf Basis der analysierten Segmentierung. \textbf{(5 Punkte)}
 \end{aufgabenstellung}
@@ -499,9 +720,9 @@ Kassenbestand & & Rückstellungen & \\
 \clearpage
 
 % ----------------------------------------------------------------------------------------------------------
-% Kapitel 5: Ablehnung Hongkong – Ursachen, Risiken, Präventionsmaßnahmen
+% Kapitel 5: Ablehnung Hongkong - Ursachen, Risiken, Präventionsmaßnahmen
 % ----------------------------------------------------------------------------------------------------------
-\section{Ablehnung Hongkong – Ursachen, Risiken, Präventionsmaßnahmen}
+\section{Ablehnung Hongkong - Ursachen, Risiken, Präventionsmaßnahmen}
 \label{sec:hongkong_risiken}
 
 \begin{aufgabenstellung}
