@@ -1,0 +1,548 @@
+% ----------------------------------------------------
+% Magic Comments for LaTeX-editors (TeXstudio, VSCode with LaTeX Workshop extension...)
+% !TeX encoding = utf8
+% !TeX spellcheck = de_DE
+% !TeX program = pdflatex
+% !BIB program = biber
+% ----------------------------------------------------
+
+% ----------------------------------------------------
+% Load the HfTL-Thesis class
+\documentclass[
+% Select the main Language of your thesis here. Titlepage, captions and statement of authorship will change accordingly:
+%
+ngerman % - Deutsch (default)
+% USenglish % - American english
+% UKenglish % - British english
+%
+numeric % (default) use numeric citation style sorted by the occurence in text: [5]
+% alphabetic % - use alphabetic citation style: [Lau95]
+% authoryear % - use authoryear citation style: Laubach 1995
+]{wbh-assignment}
+% ----------------------------------------------------
+
+% ----------------------------------------------------
+% Load your own packages here
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{scrlayer}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage[right]{eurosym}
+%\usepackage[printonlyused]{acronym}
+\usepackage{subfig}
+\usepackage{floatflt}
+% \usepackage[usenames,dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{paralist}
+\usepackage{array}
+%\usepackage{titlesec}
+% \usepackage{parskip}
+\usepackage[right]{eurosym}
+%\usepackage{wrapfig}
+% \usepackage[subfigure,titles]{tocloft}
+\usepackage{helvet}
+\usepackage{XCharter}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+% \usepackage{enumitem}
+% \usepackage{tikz}
+% \usetikzlibrary{automata, positioning, arrows}
+
+% Definition der gewünschten Rahmenfarbe mit Hex-Code
+\definecolor{rahmenfarbe}{HTML}{d7005f}
+
+% Definition des tcolorbox-Umfelds für Aufgabenstellungen
+\newtcolorbox{aufgabenstellung}[1][]{%
+  colback=white,  % Hintergrundfarbe
+  colframe=rahmenfarbe,   % Rahmenfarbe
+  title=Aufgabenstellung, % Titel der Box
+  sharp corners,
+  #1
+}
+
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+
+\lstset{
+%	language=Prolog,
+	basicstyle=\footnotesize,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{ao(english)},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	backgroundcolor=\color{lightgray!20},
+	frame=single,
+	tabsize=2,
+	captionpos=b,
+	breaklines=true,
+	breakatwhitespace=false,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	morekeywords={:-},
+}
+
+% ----------------------------------------------------
+
+% ----------------------------------------------------
+% The document body. Start your work here.
+\geometry{a4paper, top=25mm, left=30mm, right=40mm, bottom=25mm, headsep=10mm, footskip=12mm}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% ----------------------------------------------------
+% Include own references
+% \addbibresource{References/online.bib}
+% \addbibresource{References/3gpp.bib}
+% \addbibresource{References/etsi.bib}
+% \addbibresource{References/itut.bib}
+% \addbibresource{References/rfc.bib}
+% \addbibresource{References/zotero.bib}
+% \addbibresource{References/new.bib}
+% \addbibresource{quellen.bib}
+\addbibresource{references.bib}
+\addbibresource{References/Embedded Software Engineering.bib}
+
+% ----------------------------------------------------
+
+% ----------------------------------------------------
+% Load acronym definitions
+\input{acronyms}
+\makenoidxglossaries % index acronyms
+% ----------------------------------------------------
+
+\begin{document}
+% ----------------------------------------------------------------------------------------------------------
+% Titelseite
+% ----------------------------------------------------------------------------------------------------------
+\newgeometry{margin=0.5in}
+\thispagestyle{empty}
+\begin{titlepage}
+	\begin{center}
+		\begin{figure}[h]
+			\raggedleft
+			\graphicspath{ {Images/} }
+			\includegraphics[scale=0.4]{logo_wbh.png}
+		\end{figure}
+
+		\vspace*{2cm}
+		\Large \textbf{Studiengang:}\\
+		\large \textbf{Embedded Systems and Digital Technologies}\\
+
+		\vspace*{2cm}
+		\LARGE \textbf{B-Aufgabe}\\
+		\vspace*{0.5cm}
+		\large B-EBF01-XX6-K02\\
+		\vspace*{1cm}
+		\Large \textbf{Embedded Software Engineering}\\
+
+		\vspace*{2cm}
+		\vfill
+
+		\normalsize
+		\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
+		\begin{tabular}{x{6cm}p{7.5cm}}
+			\rule{0mm}{5ex}\textbf{Student:} & Kilian Vogler \newline kilian.vogler@gmail.com \\
+			\rule{0mm}{5ex}\textbf{Matrikelnummer:} & 861105 \\
+			\rule{0mm}{5ex}\textbf{Abgabedatum:} & 25.09.2025 \\
+		\end{tabular}
+	\end{center}
+\end{titlepage}
+\pagebreak
+\restoregeometry
+
+% ----------------------------------------------------------------------------------------------------------
+% Verzeichnisse
+% ----------------------------------------------------------------------------------------------------------
+
+\onehalfspacing
+\pagenumbering{Roman}
+\tableofcontents %print the table of contents
+\cleardoublepage
+
+% ----------------------------------------------------------------------------------------------------------
+% Inhalt
+% ----------------------------------------------------------------------------------------------------------
+% Abstände Überschrift
+
+% Kopfzeile
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\subsectionmark}[1]{}
+\renewcommand{\subsubsectionmark}[1]{}
+
+\onehalfspacing
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theHsection}{\arabic{section}}
+\setcounter{section}{0}
+\pagenumbering{arabic}
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel: Aufgabenstellung B-EBF01-XX6
+% ----------------------------------------------------------------------------------------------------------
+\section*{Aufgabenstellung B-EBF01-XX6}
+\addcontentsline{toc}{section}{\protect\numberline{}Aufgabenstellung B-EBF01-XX6}
+text
+\cleardoublepage
+text
+\cleardoublepage
+text
+\cleardoublepage
+% \setcounter{page}{1}
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 1: Zustandsdiagramm Scheibenwischersteuerung
+% ----------------------------------------------------------------------------------------------------------
+\section{Zustandsdiagramm Scheibenwischersteuerung}
+\begin{aufgabenstellung}
+Betrachten Sie die Steuerung durch Software eines Scheibenwischers. Der Scheibenwischer kann ausgeschaltet sein, oder auf der Stufe „einmal wischen“, Stufe 1 oder Stufe 2 sein.
+Wenn die Option „Einmal wischen“ ausgewählt wird, wischt der Scheibenwischer nur einmal und schaltet sich wieder aus.
+Der Fahrer hat die Möglichkeit ein automatisches Wischen der Windschutzscheiben auszuwählen, wenn es regnet.
+Falls der Scheibenwischer ausgeschaltet ist, wird dieses automatische System aktiviert, sobald Regen auf die Windschutzscheibe fällt.
+Erstellen Sie ein Zustandsdiagramm (state diagram) für den Scheibenwischer.
+\end{aufgabenstellung}
+\label{sec:state_diagram}
+
+\vspace*{5mm}
+
+Die grundlegenden Funktionen des Scheibenwischers sind in die folgenden Zustände unterteilt:
+
+\begin{itemize}
+    \item Aus (OFF)
+    \item Einmal wischen (WIPE\_ONCE)
+    \item Stufe 1 (LEVEL\_1)
+    \item Stufe 2 (LEVEL\_2)
+    \item Automatisch (AUTO)
+\end{itemize}
+
+Das folgende \ac{zd} (engl. \ac{smd}) modelliert die Zustände (\autoref{fig:state_diagram}) und die möglichen Übergänge zwischen ihnen.
+Die mit \enquote{Driver} gekennzeichneten Übergänge zeigen an, dass der Fahrer manuell eine Änderung des Wischerzustands vornimmt.
+Wohingegen die mit \enquote{Rain sensor} gekennzeichneten Übergänge anzeigen, dass die Änderung des Wischerzustands automatisch durch das System erfolgt, basierend auf dem Regensensor.
+
+Das Diagramm ist in voller Größe in \autoref{fig:state_diagram} auf der nächsten Seite dargestellt.
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/wiper_state_diagramm.pdf}
+	\caption[\ac{zd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})]{\ac{zd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})}
+	\label{fig:state_diagram}
+\end{figure}
+
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 2: Akteure & Use-Case-Diagramm der Scheibenwischersoftware
+% ----------------------------------------------------------------------------------------------------------
+\section{Akteure \& Use-Case-Diagramm der Scheibenwischersoftware}
+
+\subsection{Identifikation der Akteure}
+\begin{aufgabenstellung}
+Was sind Akteure und wie interagieren sie mit dem zu entwickelnden System?
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+Für das in \autoref{sec:state_diagram} betrachtete Scheibenwischersystem lassen sich die folgenden Akteure und deren Interaktionen mit dem System identifizieren:
+
+\textbf{Akteure:}
+\begin{itemize}
+  \item \textbf{Fahrer / \enquote{Driver} (primärer Akteur):} \\
+        wählt \glqq Aus\grqq, \glqq Einmal\grqq, \glqq Stufe 1\grqq, \glqq Stufe 2\grqq{} oder \glqq Auto\grqq.
+  \item \textbf{Regensensor / \enquote{Rain sensor} (sekundärer Akteur):} \\
+        liefert Information \glqq Regen erkannt / kein Regen\grqq{} sowie die \glqq Intensität des Regens\grqq.
+\end{itemize}
+
+\vspace*{5mm}
+
+\textbf{Interaktion:}
+\begin{itemize}
+  \item Der Fahrer löst durch Eingaben Zustandswechsel des Wischers aus.
+  \item Der Sensor interagiert automatisch und triggert Zustandswechsel im Automatikmodus und passt die Wischgeschwindigkeit an die Regenintensität an.
+  \item Das System reagiert, indem es die Wischermotoren steuert und die gewünschte Funktion ausführt. Sowie schaltet sich bei \glqq Einmal wischen\grqq{} nach einem Zyklus wieder aus.
+\end{itemize}
+
+
+\subsection{Use-Case-Diagramm: Scheibenwischersoftware}
+\begin{aufgabenstellung}
+Erstellen Sie ein Anwendungsfalldiagramm (use-case diagramm) der Steuerungssoftware des Scheibenwischers in dieser Form (nur als Beispiel, das nichts über die Zahl der Use Cases und Akteure im gegebenen Fall aussagt): Der Regensensor sollte als Akteur modelliert werden.
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+Im folgenden Anwendungsfalldiagramm (engl. \ac{ucd}) sind die Akteure Fahrer (\enquote{Driver}) und Regensensor (\enquote{Rain sensor}) sowie deren Interaktionen mit dem Scheibenwischersystem (Windshield wiper software) in \autoref{fig:use_case_diagram} dargestellt.
+
+\vspace*{5mm}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/use_case_diagramm.pdf}
+	\caption[\ac{ucd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})]{\ac{ucd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})}
+	\label{fig:use_case_diagram}
+\end{figure}
+
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 3: Aktivitätsdiagramm: Automatischer Scheibenwischerbetrieb
+% ----------------------------------------------------------------------------------------------------------
+\section{Aktivitätsdiagramm: Automatischer Scheibenwischerbetrieb}
+
+\begin{aufgabenstellung}
+Erstellen Sie ein UML-Aktivitätsdiagramm (Activity Diagram) für den Scheibenwischer für das folgende Szenario:
+Der Scheibenwischer wird von Motoren angetrieben und seine Geschwindigkeit über einen Regensensor reguliert. Nehmen Sie an, dass das automatische Wischen schon eingeschaltet ist.
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+Im UML-Aktivitätsdiagramm (engl. \ac{ad}) in \autoref{fig:activity_diagram} ist der Ablauf des automatischen Scheibenwischerbetriebs modelliert.
+Die Intensität des Regens ist in der Darstellung in die Zustände \enquote{kein Regen}, \enquote{leichter Regen}, \enquote{mäßiger Regen} und \enquote{starker Regen} unterteilt.
+Es wurde auch die manuelle Abschaltung des Scheibenwischers berücksichtigt.
+Nach einem Zeitintervall wird der Regensensor erneut abgefragt, um die Wischgeschwindigkeit entsprechend der aktuellen Regenintensität anzupassen.
+
+Das UML-Aktivitätsdiagramm ist in voller Größe in \autoref{fig:activity_diagram} auf der nächsten Seite dargestellt.
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/activity_diagramm.pdf}
+	\caption[UML-\ac{ad} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})]{UML-\ac{ad} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})}
+	\label{fig:activity_diagram}
+\end{figure}
+
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 4: Nebenläufigkeit eingebetteter Systeme
+% ----------------------------------------------------------------------------------------------------------
+\section{Nebenläufigkeit eingebetteter Systeme}
+
+\subsection{Inhärente Nebenläufigkeit eingebetteter Systeme}
+\begin{aufgabenstellung}
+Erläutern Sie, warum eingebettete Systeme inhärent nebenläufig sind und warum dies einen Grund für ihre hohe Entwurfskomplexität darstellt.
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+Eingebettete Systeme sind inhärent nebenläufig, da sie simultan auf verschiedene asynchrone Ereignisse reagieren müssen.
+Dies zeigt sich im Scheibenwischersystem: Während das System kontinuierlich Regensensordaten auswertet und die Motorgeschwindigkeit entsprechend anpasst, muss es gleichzeitig auf manuelle Benutzereingaben reagieren können.
+Der Regensensor arbeitet in regelmäßigen Intervallen, unabhängig von der Motorsteuerung oder Benutzereingaben.
+Hinzu kommt eine interrupt gesteuerte Architektur, bei der externe Events wie Sensormessungen oder Timer-Interrupts jederzeit eintreten und die Hauptausführung unterbrechen können.
+
+Die hohe Entwurfskomplexität entsteht durch Race Conditions beim gleichzeitigen Zugriff auf gemeinsame Systemzustände und die Notwendigkeit deterministischer Echtzeitreaktionen trotz paralleler Prozesse und die schwierige Vorhersagbarkeit des Systemverhaltens.
+Darüber hinaus erfordert die Beschränkung auf begrenzte Ressourcen, wie CPU-Zeit, Speicher und Energie, eine sorgfältige Priorisierung und Synchronisation der Tasks.
+Debugging wird zudem erschwert, da timing abhängige Fehler oft nicht reproduzierbar sind und spezielle Analysetools benötigt werden, um Race Conditions oder Deadlocks aufzuspüren \cite{cummingsManagingConcurrencyComplex, ConcurrencyInterruptsMicrocontrollers}.
+
+\newpage
+
+\subsection{POSIX Threads: Umsetzung der Nebenläufigkeit}
+\begin{aufgabenstellung}
+Nebenläufige Tasks werden in der Programmiersprache C mithilfe von POSIX Threads implementiert. Erklären Sie kurz, wie Threads die Nebenläufigkeit implementieren.
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+POSIX Threads implementieren Nebenläufigkeit durch die Aufteilung der Programmlogik in mehrere parallel ausführbare Einheiten.
+Jeder Thread erhält einen eigenen Ausführungskontext: Stack, Programmzähler, Register, während alle Threads denselben Adressraum teilen.
+Das ermöglicht effizienten Datenaustausch über gemeinsame Variablen \cite{LinuxTutorialPOSIX}.
+
+Das Betriebssystem verwendet präemptives Scheduling, um Threads zeitscheibenbasiert oder prioritätsgesteuert auf verfügbare CPU-Kerne zu verteilen.
+Moderne pthread-Implementierungen nutzen Kernel-Level-Threads für echte Parallelität auf Mehrkernsystemen.
+Synchronisationsmechanismen wie Mutexes und Condition Variables koordinieren den Zugriff auf gemeinsame Ressourcen.
+
+\newpage
+
+\subsection{Zusätzliche Thread-Funktionen im Scheibenwischersystem}
+\begin{aufgabenstellung}
+Betrachten Sie wieder das Scheibenwischersystem. Das Folgende zeigt eine Funktion (im Pseudocode), die ein Thread ausführen kann.
+Geben Sie zwei weitere Funktionen an, die beim Scheibenwischersystem als Threads ausgeführt werden können.
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+Im Folgenden zwei Threads für das Scheibenwischersystem. Zum einen der Regensensor-Thread und der Motorsteuerungs-Thread. \newline
+Mit dem Regensensor-Thread wird die Regenintensität kontinuierlich überwacht und die Wischgeschwindigkeit entsprechend angepasst.
+
+\vspace*{5mm}
+
+\begin{lstlisting}[language=C, caption={Regensensor-Thread}]
+void* RainSensor_Thread() {
+    while(1) {
+        int rainIntensity = readRainSensor();
+
+        int wiperSpeed;
+        if(rainIntensity == 0) {
+            wiperSpeed = OFF;
+        }
+        else if(rainIntensity <= LIGHT) {
+            wiperSpeed = SLOW;
+        }
+        else if(rainIntensity <= MODERATE) {
+            wiperSpeed = MEDIUM;
+        }
+        else {
+            wiperSpeed = FAST;
+        }
+
+        writeSpeedToBuffer(wiperSpeed);
+
+        waitSamplingInterval();
+
+        if(isSystemManuallyOff()) break;
+    }
+    return NULL;
+}
+\end{lstlisting}
+
+\newpage
+
+Mit dem Motorsteuerungs-Thread wird die Wischgeschwindigkeit basierend auf den Daten des Regensensors eingestellt und der Wischzyklus gestartet.
+Es wird zudem auch nach dem Wischzyklus überprüft, ob das System manuell ausgeschaltet wurde.
+
+\vspace*{5mm}
+
+\begin{lstlisting}[language=C, caption={Motorsteuerungs-Thread}]
+void* MotorControl_Thread() {
+    while(1) {
+        int currentSpeed = readSpeedFromBuffer();
+
+        switch(currentSpeed) {
+            case OFF:
+                stopMotor();
+                break;
+            case SLOW:
+                setMotorSpeed(SLOW_VALUE);
+                startWipeCycle();
+                break;
+            case MEDIUM:
+                setMotorSpeed(MEDIUM_VALUE);
+                startWipeCycle();
+                break;
+            case FAST:
+                setMotorSpeed(FAST_VALUE);
+                startWipeCycle();
+                break;
+        }
+
+        if(isSystemManuallyOff()) {
+            stopMotor();
+            break;
+        }
+
+        usleep(MOTOR_CYCLE_DELAY);
+    }
+    return NULL;
+}
+\end{lstlisting}
+
+\newpage
+
+\subsection{Kommunikation und Synchronisation der Threads}
+\begin{aufgabenstellung}
+Beschreiben Sie, warum die Threads miteinander kommunizieren oder sich synchronisieren müssen. Geben Sie auch an, wie Sie die Kommunikation oder Synchronisation implementieren würden (nur das Mittel, nicht den Code).
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+Die Threads müssen miteinander kommunizieren, weil sie gemeinsame Daten austauschen und koordiniert arbeiten müssen.
+Der Regensensor-Thread bestimmt basierend auf Sensormessungen die erforderliche Motorgeschwindigkeit, die der Motorsteuerungs-Thread umsetzen muss.
+Ohne Kommunikation könnte der Motor nicht auf Änderungen der Regenintensität reagieren.
+
+Die Synchronisation ist erforderlich, um Race Conditions zu vermeiden.
+Wenn beide Threads gleichzeitig auf den gemeinsamen Geschwindigkeitspuffer zugreifen, während der Regensensor-Thread eine neue Geschwindigkeit schreibt und der Motorsteuerungs-Thread diese liest, können inkonsistente Daten entstehen.
+Dies könnte zu unvorhersagbarem Motorverhalten oder Systemfehlern führen.
+Um dies zu verhindern, gibt es die folgenden Mechanismen in der Implementierung:
+
+\begin{itemize}
+  \item \textbf{Mutex (pthread\_mutex\_t)}: Schützt den kritischen Abschnitt beim Zugriff auf den gemeinsamen Geschwindigkeitspuffer und verhindert gleichzeitige Lese-/Schreibzugriffe.
+  \item \textbf{Condition Variables (pthread\_cond\_t)}: Signalisieren Ereignisse zwischen den Threads, z.\,B. wenn der Regensensor-Thread eine neue Geschwindigkeit ermittelt hat oder wenn das System manuell ausgeschaltet wird.
+  \item \textbf{Shared Buffer}: Ein geschützter Speicherbereich zur Übertragung der Geschwindigkeitswerte zwischen den Threads.
+  \item \textbf{Atomic Variables}: Für einfache Statusflags wie den manuellen Ausschaltbefehl, um lockfreie Synchronisation zu ermöglichen.
+\end{itemize}
+
+Diese Mechanismen gewährleisten Datenintegrität trotz paralleler bzw. überlappender Ausführung der Threads.
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 5: Echtzeitsysteme & Verkehrszeichenerkennung
+% ----------------------------------------------------------------------------------------------------------
+\section{Echtzeitsysteme \& Verkehrszeichenerkennung}
+
+\subsection{Echtzeitsystem-Analyse: Scheibenwischer}
+\begin{aufgabenstellung}
+Ist der Scheibenwischer in Aufgabe 1 ein Echtzeitsystem? Begründen Sie Ihre Antwort?
+\end{aufgabenstellung}
+
+% \vspace*{5mm}
+
+Der Scheibenwischer aus \autoref{sec:state_diagram} ist ein Echtzeitsystem, weil er zeitkritisch auf äußere Ereignisse, wie hier das Fallen von Regen, reagieren muss.
+Die Steuerungssoftware darf die Aktivierung des Wischers bei Regen nicht zu stark verzögern, dass die Sicht des Fahrers zu sehr beeinträchtigt wird.
+Hier kann eine späte Reaktion zu Gefährdungen führen und es müssen alle Rechen- und Sensorzugriffe innerhalb definierter Fristen abgeschlossen sein.
+Da jedoch gelegentliche geringfügige Verzögerungen um wenige Millisekunden nicht unmittelbar katastrophale Folgen haben, handelt es sich um ein weiches Echtzeitsystem \cite{HowAchieveDeterministic}.
+
+\subsection{Beispielhafte Anwendungen der Verkehrszeichenerkennung}
+\begin{aufgabenstellung}
+Beschreiben Sie mithilfe von Beispielen, wie ein Verkehrszeichenerkennungssystem verwendet werden könnte.
+\end{aufgabenstellung}
+
+% \vspace*{5mm}
+
+Verkehrszeichenerkennungssysteme (\ac{tsr}) analysieren in Echtzeit Kamerabilder, um Verkehrszeichen zu identifizieren und deren Information an den Fahrer oder Fahrassistenzsysteme zu übermitteln.
+Beispiele hierfür sind die folgenden Systeme:
+\begin{itemize}
+  \item Anzeige der zulässigen Höchstgeschwindigkeit im Kombiinstrument oder Head-Up-Display, sowie Warnung bei Überschreitung.
+  \item Automatische Anpassung der Geschwindigkeit im adaptiven Tempomaten basierend auf erkannten Geschwindigkeitsbegrenzungen.
+\end{itemize}
+
+\subsection{Echtzeitfähigkeit und Klassifizierung von Verkehrszeichenerkennungssystemen}
+\begin{aufgabenstellung}
+Erläutern Sie, warum Verkehrszeichenerkennungssysteme echtzeitfähig sein müssen. Handelt es sich um harte Echtzeitsysteme? Begründen Sie Ihre Antwort.
+\end{aufgabenstellung}
+
+Verkehrszeichenerkennung muss echtzeitfähig sein, weil erkannte Informationen nur innerhalb eines engen Zeitfensters relevant sind.
+Wird ein Tempolimit zu spät erkannt, kann das Assistenzsystem nicht rechtzeitig die Fahrzeuggeschwindigkeit anpassen und der Fahrer könnte in eine Gefahrenlage geraten bzw. an der Stelle mit Beginn der Geschwindigkeitsbegrenzung noch eine zu hohe Geschwindigkeit fahren.
+
+Da in diesem Beispiel eine einzelne Fristverletzung typischerweise nicht sofort katastrophal ist, es könnte ein verpasstes Schild zu Komforteinbußen oder Bußgeldrisiken führen, wird \ac{tsr} üblicherweise als weiches Echtzeitsystem klassifiziert.
+Harte Echtzeitsysteme erfordern, dass jede Deadline ohne Ausnahme absolut eingehalten wird, was hier nicht in gleicher Weise gefordert ist \cite{HowAchieveDeterministic}.
+Ein Beispiel für ein hartes Echtzeitsystem im Bereich der Fahrzeugtechnik wäre ein Airbag-Steuergerät, bei dem eine Fristverletzung zu lebensbedrohlichen Folgen führen kann.
+
+\clearpage
+
+\cleardoublepage
+
+\appendix
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+% Redefine \chapter* to not cause a page break
+\makeatletter
+\renewcommand\chapter{\@startsection{chapter}{0}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\Large\bfseries}}
+\makeatother
+
+\begingroup
+\raggedright
+\printbibliography
+\endgroup
+
+\nopagebreak
+\printnoidxglossary[type=\acronymtype] % print the list of abbreviations
+
+\nopagebreak
+\listoffigures % print the list of figures
+
+% \nopagebreak
+% \listoftables % print the list of tables
+
+\nopagebreak
+\lstlistoflistings % print the list of source codes
+
+% \clearpage
+% \makedeclarationofauthorship % print the declaration of authorship
+
+\end{document}
