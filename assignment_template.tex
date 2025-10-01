@@ -139,9 +139,9 @@ numeric % (default) use numeric citation style sorted by the occurence in text: 
 		\vspace*{2cm}
 		\LARGE \textbf{B-Aufgabe}\\
 		\vspace*{0.5cm}
-		\large B-EBF01-XX6-K02\\
+		\large B-TBU01-XX5-N01\\
 		\vspace*{1cm}
-		\Large \textbf{Embedded Software Engineering}\\
+		\Large \textbf{Technologiebasierte Unternehmensgründung}\\
 
 		\vspace*{2cm}
 		\vfill
@@ -151,7 +151,7 @@ numeric % (default) use numeric citation style sorted by the occurence in text: 
 		\begin{tabular}{x{6cm}p{7.5cm}}
 			\rule{0mm}{5ex}\textbf{Student:} & Kilian Vogler \newline kilian.vogler@gmail.com \\
 			\rule{0mm}{5ex}\textbf{Matrikelnummer:} & 861105 \\
-			\rule{0mm}{5ex}\textbf{Abgabedatum:} & 25.09.2025 \\
+			\rule{0mm}{5ex}\textbf{Abgabedatum:} & 03.10.2025 \\
 		\end{tabular}
 	\end{center}
 \end{titlepage}
@@ -192,322 +192,348 @@ text
 \cleardoublepage
 text
 \cleardoublepage
-text
-\cleardoublepage
-% \setcounter{page}{1}
 
 % ----------------------------------------------------------------------------------------------------------
-% Kapitel 1: Zustandsdiagramm Scheibenwischersteuerung
+% Kapitel 1: Projektvorgehen, Organisation & rechtlicher Rahmen
 % ----------------------------------------------------------------------------------------------------------
-\section{Zustandsdiagramm Scheibenwischersteuerung}
+\section{Projektvorgehen, Organisation \& rechtlicher Rahmen}
+\label{sec:projektvorgehen}
+
+\subsection{(1a) Vorgehen, Beteiligte, Organisations-/Arbeitsstruktur, Standort}
 \begin{aufgabenstellung}
-Betrachten Sie die Steuerung durch Software eines Scheibenwischers. Der Scheibenwischer kann ausgeschaltet sein, oder auf der Stufe „einmal wischen“, Stufe 1 oder Stufe 2 sein.
-Wenn die Option „Einmal wischen“ ausgewählt wird, wischt der Scheibenwischer nur einmal und schaltet sich wieder aus.
-Der Fahrer hat die Möglichkeit ein automatisches Wischen der Windschutzscheiben auszuwählen, wenn es regnet.
-Falls der Scheibenwischer ausgeschaltet ist, wird dieses automatische System aktiviert, sobald Regen auf die Windschutzscheibe fällt.
-Erstellen Sie ein Zustandsdiagramm (state diagram) für den Scheibenwischer.
+Stellen Sie dar, wie Sie dieses Projekt angehen, insbesondere in Bezug auf Beteiligte, Organisations-/Arbeitsstruktur und Standort. Verwenden Sie hierzu Stärken-Schwächen-Analysen oder auch Nutzwertanalysen. \textbf{(8 Punkte)}
 \end{aufgabenstellung}
-\label{sec:state_diagram}
 
 \vspace*{5mm}
 
-Die grundlegenden Funktionen des Scheibenwischers sind in die folgenden Zustände unterteilt:
+\subsubsection{Zielbild \& Annahmen}
+% Kurz die Projektziele, Scope, Randbedingungen und Erfolgskriterien skizzieren.
 
+\subsubsection{Stakeholderanalyse}
+% Primäre/sekundäre Stakeholder, Rollen, Erwartungshaltungen, Einfluss/Macht
 \begin{itemize}
-    \item Aus (OFF)
-    \item Einmal wischen (WIPE\_ONCE)
-    \item Stufe 1 (LEVEL\_1)
-    \item Stufe 2 (LEVEL\_2)
-    \item Automatisch (AUTO)
+  \item \textbf{Primär:} Kunde, Endnutzer, Projektauftraggeber, Kernteam
+  \item \textbf{Sekundär:} Lieferanten, Partner, Regulierungsbehörden, interne Supportfunktionen
 \end{itemize}
 
-Das folgende \ac{zd} (engl. \ac{smd}) modelliert die Zustände (\autoref{fig:state_diagram}) und die möglichen Übergänge zwischen ihnen.
-Die mit \enquote{Driver} gekennzeichneten Übergänge zeigen an, dass der Fahrer manuell eine Änderung des Wischerzustands vornimmt.
-Wohingegen die mit \enquote{Rain sensor} gekennzeichneten Übergänge anzeigen, dass die Änderung des Wischerzustands automatisch durch das System erfolgt, basierend auf dem Regensensor.
+\subsubsection{Organisations- \& Arbeitsstruktur}
+% Organigramm (Linie/Matrix), RACI, Entscheidungs- und Eskalationswege
+% Hinweis auf iteratives/vs. stage-gate Vorgehen, Tools, Meetings, KPIs
 
-Das Diagramm ist in voller Größe in \autoref{fig:state_diagram} auf der nächsten Seite dargestellt.
+\subsubsection{Standortwahl}
+% Kriterien (Nähe Kunde, Talente, Kosten, Regulierung, IP-Schutz, Logistik, Zeitzonen, Förderungen)
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=1\linewidth]{Images/wiper_state_diagramm.pdf}
-	\caption[\ac{zd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})]{\ac{zd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})}
-	\label{fig:state_diagram}
-\end{figure}
+\subsubsection{Stärken-Schwächen-Analyse (SWOT)}
+% SWOT auf Unternehmensebene oder Projekt-Setup
+\begin{table}[htb!]
+\centering
+\caption{SWOT-Analyse Projektsetup}
+\begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+\textbf{Stärken (S)} & \textbf{Schwächen (W)} \\
+\hline
+% ...
+& \\
+\textbf{Chancen (O)} & \textbf{Risiken (T)} \\
+\hline
+% ...
+& \\
+\end{tabular}
+\end{table}
+
+\subsubsection{Nutzwertanalyse (z.\,B. Standort- oder Organisationsoptionen)}
+% Kriterien, Gewichtungen, Bewertungsskala, Gesamtnutzen je Option
+\begin{table}[htb!]
+\centering
+\caption{Nutzwertanalyse Standort-/Organisationsoptionen}
+\begin{tabular}{l r r r r}
+\textbf{Kriterium} & \textbf{Gew.} & \textbf{Option A} & \textbf{Option B} & \textbf{Option C} \\
+\hline
+% Beispiel: Talentpool & 0.25 & 4 & 3 & 5
+% ...
+\multicolumn{2}{l}{\textbf{Gesamtnutzen}} & & & \\
+\end{tabular}
+\end{table}
+
+\paragraph{Begründung}
+% Detaillierte Begründung der getroffenen Wahl auf Basis der Analysen.
+
+\clearpage
+
+\subsection{(1b) Rechtlicher Rahmen (Organisationsform \& Patente)}
+\begin{aufgabenstellung}
+Wie sieht ein möglicher rechtlicher Rahmen für das Projekt aus (Organisationsform, Patentsituation)? Ergänzen Sie dabei die gemachten Angaben nach Ihren Bedürfnissen. \textbf{(8 Punkte)}
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsubsection{Organisations-/Gesellschaftsform}
+% Optionen (z.B. GmbH, AG, JV), Haftung, Kapitalbedarf, Governance, Steueraspekte
+
+\subsubsection{IP-/Patentsituation}
+% Freedom-to-Operate, Prior-Art-Suche, Schutzrechte (Patente, Marken, Designs), Lizenzstrategien, NDA, Arbeitnehmererfindungen
+
+\subsubsection{Compliance \& Regulatorik}
+% Branchenstandards, Exportkontrollen, Datenschutz, Produktsicherheit, Zertifizierungen
+
+\paragraph{Begründung}
+% Warum diese Rechts-/Organisationsform und IP-Strategie zum Vorhaben passt.
+
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 2: Marktanalyse & Eintrittsstrategie
+% ----------------------------------------------------------------------------------------------------------
+\section{Marktanalyse \& Eintrittsstrategie}
+\label{sec:marktanalyse}
+
+\subsection{(2a) Marktanalyse \& kritische Erfolgsfaktoren}
+\begin{aufgabenstellung}
+Entwickeln Sie auf Basis einer umfassenden Marktanalyse (Porter 5 Forces, Umgebungsanalyse, Value Chain Analysis o.\,Ä.) kritische Erfolgsfaktoren für das Projekt. \textbf{(16 Punkte)}
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsubsection{Porter Five Forces}
+% Käufermacht, Lieferantenmacht, Ersatzprodukte, Markteintrittsbarrieren, Rivalität
+% ggf. Abbildung
+% \begin{figure}[htb!]\centering\includegraphics[width=0.9\linewidth]{Images/porter.pdf}\caption{Porter Five Forces}\label{fig:porter}\end{figure}
+
+\subsubsection{Umgebungsanalyse (z.\,B. PESTEL)}
+% Political, Economic, Social, Technological, Environmental, Legal
+
+\subsubsection{Value Chain Analysis}
+% Primär- und Unterstützungsaktivitäten, Wo entsteht differenzierender Wert?
+
+\subsubsection{Kritische Erfolgsfaktoren (KEF)}
+\begin{itemize}
+  \item KEF~1: % ...
+  \item KEF~2: % ...
+  \item KEF~3: % ...
+\end{itemize}
+
+\paragraph{Begründung}
+% Herleitung der KEF direkt aus den Analysen, Messgrößen/KPIs definieren.
+
+\subsection{(2b) Eintrittsoptionen, Bewertung, Empfehlung \& Back-up}
+\begin{aufgabenstellung}
+Stellen Sie mögliche Eintrittsoptionen in den Markt dar und bewerten Sie diese entsprechend. Was ist Ihre Empfehlung und warum? Was planen Sie als Back-up-Lösung? \textbf{(9 Punkte)}
+\end{aufgabenstellung}
+
+\vspace*{5mm}
+
+\subsubsection{Eintrittsoptionen}
+% Greenfield, Partnerschaft/Allianz, Lizenz/Franchising, Joint Venture, M\&A, Plattform/Marketplace
+
+\subsubsection{Bewertung (Nutzwert-/Risiko-Nutzen-Matrix)}
+\begin{table}[htb!]
+\centering
+\caption{Bewertung Markteintrittsoptionen}
+\begin{tabular}{l r r r r}
+\textbf{Kriterium} & \textbf{Gew.} & \textbf{Option 1} & \textbf{Option 2} & \textbf{Option 3} \\
+\hline
+% Time-to-Market, CAPEX/OPEX, regulatorisches Risiko, Skalierbarkeit, Kontrolle, Marge
+\multicolumn{2}{l}{\textbf{Gesamtscore}} & & & \\
+\end{tabular}
+\end{table}
+
+\subsubsection{Empfehlung}
+% Gewählte Option, Roadmap, Meilensteine, Erfolgskriterien
+
+\subsubsection{Back-up-Strategie}
+% Alternativpfad bei Scheitern, Abbruch-/Pivot-Kriterien, Verwässerungs- und Kostenrahmen
 
 \clearpage
 
 % ----------------------------------------------------------------------------------------------------------
-% Kapitel 2: Akteure & Use-Case-Diagramm der Scheibenwischersoftware
+% Kapitel 3: Marketing-/Entwicklungsplan \& Positionierung
 % ----------------------------------------------------------------------------------------------------------
-\section{Akteure \& Use-Case-Diagramm der Scheibenwischersoftware}
+\section{Marketing-/Entwicklungsplan \& Positionierung}
+\label{sec:marketing_plan}
 
-\subsection{Identifikation der Akteure}
+\subsection{(3a) Plan auf Basis Positionierung \& Segmentierung; Portfolioszenarien}
 \begin{aufgabenstellung}
-Was sind Akteure und wie interagieren sie mit dem zu entwickelnden System?
+Erstellen Sie auf Grundlage der in Aufgabe 2 ermittelten Marktpositionierung und auf Basis einer Zielgruppensegmentierung einen Marketing-/Entwicklungsplan. Zeigen Sie mögliche Portfolioszenarien (Produkt, Preis, Service) auf. \textbf{(15 Punkte)}
 \end{aufgabenstellung}
 
 \vspace*{5mm}
 
-Für das in \autoref{sec:state_diagram} betrachtete Scheibenwischersystem lassen sich die folgenden Akteure und deren Interaktionen mit dem System identifizieren:
+\subsubsection{Zielgruppensegmentierung}
+% Segmente, Größe/Wachstum, Needs/Jobs-to-be-done, Zahlungsbereitschaft, Priorität
+\begin{table}[htb!]
+\centering
+\caption{Segmentübersicht}
+\begin{tabular}{l r r l}
+\textbf{Segment} & \textbf{Volumen} & \textbf{Wachstum} & \textbf{Kernbedürfnisse} \\
+\hline
+% ...
+\end{tabular}
+\end{table}
 
-\textbf{Akteure:}
-\begin{itemize}
-  \item \textbf{Fahrer / \enquote{Driver} (primärer Akteur):} \\
-        wählt \glqq Aus\grqq, \glqq Einmal\grqq, \glqq Stufe 1\grqq, \glqq Stufe 2\grqq{} oder \glqq Auto\grqq.
-  \item \textbf{Regensensor / \enquote{Rain sensor} (sekundärer Akteur):} \\
-        liefert Information \glqq Regen erkannt / kein Regen\grqq{} sowie die \glqq Intensität des Regens\grqq.
-\end{itemize}
+\subsubsection{Positionierung}
+% Zielposition, Wettbewerbsdifferenzierung, Reason-to-Believe
 
-\vspace*{5mm}
+\subsubsection{Marketing-/Go-to-Market-Plan}
+% Kanäle, Taktiken, Funnel, Content, Partnerschaften, Budget/KPIs, Zeitplan
 
-\textbf{Interaktion:}
-\begin{itemize}
-  \item Der Fahrer löst durch Eingaben Zustandswechsel des Wischers aus.
-  \item Der Sensor interagiert automatisch und triggert Zustandswechsel im Automatikmodus und passt die Wischgeschwindigkeit an die Regenintensität an.
-  \item Das System reagiert, indem es die Wischermotoren steuert und die gewünschte Funktion ausführt. Sowie schaltet sich bei \glqq Einmal wischen\grqq{} nach einem Zyklus wieder aus.
-\end{itemize}
+\subsubsection{Entwicklungsplan (Roadmap)}
+% Releases, MVP->V1->V2, Lernziele/Experimente, Qualitäts-/Zulassungsschritte
+% \begin{figure}[htb!]\centering\includegraphics[width=\linewidth]{Images/roadmap.pdf}\caption{Produkt-/Tech-Roadmap}\label{fig:roadmap}\end{figure}
 
+\subsubsection{Portfolioszenarien (Produkt, Preis, Service)}
+\begin{table}[htb!]
+\centering
+\caption{Portfolioszenarien}
+\begin{tabular}{l l l l}
+\textbf{Szenario} & \textbf{Produktbündel} & \textbf{Preislogik} & \textbf{Servicelevel} \\
+\hline
+% Basis & ... & Subscription/One-off & Self-Service
+% Premium & ... & Value-based & Managed
+% Enterprise & ... & Custom & SLA/Support 24/7
+\end{tabular}
+\end{table}
 
-\subsection{Use-Case-Diagramm: Scheibenwischersoftware}
+\paragraph{Begründung}
+% Warum diese Segmente/Positionierung/Portfolio; Bezug zu KEF und Marktanalyse.
+
+\subsection{(3b) Kundenerreichung \& USP-Statement}
 \begin{aufgabenstellung}
-Erstellen Sie ein Anwendungsfalldiagramm (use-case diagramm) der Steuerungssoftware des Scheibenwischers in dieser Form (nur als Beispiel, das nichts über die Zahl der Use Cases und Akteure im gegebenen Fall aussagt): Der Regensensor sollte als Akteur modelliert werden.
+Wie stellen Sie sicher, dass Sie Ihre Kunden erreichen? Formulieren Sie eine kurze, zusammenfassende Darstellung des Alleinstellungsmerkmals zur gewünschten Positionierung auf Basis der analysierten Segmentierung. \textbf{(5 Punkte)}
 \end{aufgabenstellung}
 
 \vspace*{5mm}
 
-Im folgenden Anwendungsfalldiagramm (engl. \ac{ucd}) sind die Akteure Fahrer (\enquote{Driver}) und Regensensor (\enquote{Rain sensor}) sowie deren Interaktionen mit dem Scheibenwischersystem (Windshield wiper software) in \autoref{fig:use_case_diagram} dargestellt.
+\subsubsection{Kanalstrategie \& Abdeckung}
+% Kanal-Mix, Reichweite vs. Effizienz, Tests/Iterationen, KPI-Deckung
+
+\subsubsection{USP (Kurzstatement)}
+% Vorlage:
+% Für [Zielsegment], die/der [Bedarf/Problem], bietet [Produkt/Angebot] [Kerndifferenzierung],
+% im Gegensatz zu [Hauptalternative], weil [Beweis/Reason-to-Believe].
+
+\paragraph{Begründung}
+% Warum diese Kanäle/Message-Market-Fit funktionieren werden.
+
+
+% ----------------------------------------------------------------------------------------------------------
+% Kapitel 4: Finanzplanung \& Finanzierung
+% ----------------------------------------------------------------------------------------------------------
+\section{Finanzplanung \& Finanzierung}
+\label{sec:finanzplanung}
+
+\begin{aufgabenstellung}
+Stellen Sie anhand Ihrer Finanzplanung (z.\,B. GuV, Cashflow, Bilanz in Tabellenform) dar, welche Mindestinvestitionssumme von Dritten eingebracht werden muss. Erklären Sie in kurzen Worten, welche Finanzierungsmöglichkeiten Ihnen zur Verfügung stehen und welche Vor- und Nachteile diese haben. \textbf{(25 Punkte)}
+\end{aufgabenstellung}
 
 \vspace*{5mm}
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=1\linewidth]{Images/use_case_diagramm.pdf}
-	\caption[\ac{ucd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})]{\ac{ucd} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})}
-	\label{fig:use_case_diagram}
-\end{figure}
+\subsection{Plan-GuV (3--5 Jahre)}
+\begin{table}[htb!]
+\centering
+\caption{Plan-GuV}
+\begin{tabular}{l r r r r}
+\textbf{Position} & \textbf{Jahr 1} & \textbf{Jahr 2} & \textbf{Jahr 3} & \textbf{Jahr 4} \\
+\hline
+Umsatz & & & & \\
+COGS & & & & \\
+\textbf{Bruttoergebnis} & & & & \\
+OPEX (F\&E, Vertrieb, Allg.) & & & & \\
+EBITDA & & & & \\
+Abschreibungen & & & & \\
+EBIT & & & & \\
+Zinsen/Steuern & & & & \\
+\textbf{Jahresüberschuss} & & & & \\
+\end{tabular}
+\end{table}
+
+\subsection{Cashflow-Plan}
+\begin{table}[htb!]
+\centering
+\caption{Cashflow}
+\begin{tabular}{l r r r r}
+\textbf{Position} & \textbf{Jahr 1} & \textbf{Jahr 2} & \textbf{Jahr 3} & \textbf{Jahr 4} \\
+\hline
+Operativer Cashflow & & & & \\
+Investitions-Cashflow & & & & \\
+Finanzierungs-Cashflow & & & & \\
+\textbf{Netto-Cashflow} & & & & \\
+Kassenbestand (Ende) & & & & \\
+\end{tabular}
+\end{table}
+
+\subsection{Bilanz (Stichtag)}
+\begin{table}[htb!]
+\centering
+\caption{Bilanz (verkürzt)}
+\begin{tabular}{l r l r}
+\multicolumn{2}{c}{\textbf{Aktiva}} & \multicolumn{2}{c}{\textbf{Passiva}} \\
+\hline
+Anlagevermögen & \hspace{6em} & EK & \hspace{6em} \\
+Umlaufvermögen & & FK kurz/lang & \\
+Kassenbestand & & Rückstellungen & \\
+\textbf{Summe Aktiva} & & \textbf{Summe Passiva} & \\
+\end{tabular}
+\end{table}
+
+\subsection{Kapitalbedarf \& Mindestinvestitionssumme}
+% Herleitung: kumulierter negativer Cashflow + Sicherheitszuschlag + Working Capital
+% Darstellung der Liquiditätslücke und Zeitpunkt(e) der Finanzierungstranchen.
+
+\subsection{Finanzierungsoptionen: Vor- \& Nachteile}
+% \begin{table}[htb!]
+% \centering
+% \caption{Finanzierungsinstrumente im Vergleich}
+% \begin{tabular}{l l l}
+% \textbf{Instrument} & \textbf{Vorteile} & \textbf{Nachteile} \\
+% \hline
+% Eigenkapital (VC/BA) & % Smart Money, Risiko-Sharing
+% & % Verwässerung, Governance-Auflagen \\
+% Venture Debt-Bankdarlehen & & \\
+% Fördermittel-Zuschüsse & & \\
+% Mezzanine-Convertible & & \\
+% Crowdfunding & & \\
+% \end{tabular}
+% \end{table}
+
+\paragraph{Begründung}
+% Warum diese Struktur/Timing passend ist; Sensitivitäten/Downside-Case.
 
 \clearpage
 
 % ----------------------------------------------------------------------------------------------------------
-% Kapitel 3: Aktivitätsdiagramm: Automatischer Scheibenwischerbetrieb
+% Kapitel 5: Ablehnung Hongkong – Ursachen, Risiken, Präventionsmaßnahmen
 % ----------------------------------------------------------------------------------------------------------
-\section{Aktivitätsdiagramm: Automatischer Scheibenwischerbetrieb}
+\section{Ablehnung Hongkong – Ursachen, Risiken, Präventionsmaßnahmen}
+\label{sec:hongkong_risiken}
 
 \begin{aufgabenstellung}
-Erstellen Sie ein UML-Aktivitätsdiagramm (Activity Diagram) für den Scheibenwischer für das folgende Szenario:
-Der Scheibenwischer wird von Motoren angetrieben und seine Geschwindigkeit über einen Regensensor reguliert. Nehmen Sie an, dass das automatische Wischen schon eingeschaltet ist.
+Sie haben den Zuschlag für das Projekt in Hongkong leider nicht bekommen (nur 2. Sieger) und stehen vor einem potenziellen finanziellen Scherbenhaufen – erklären Sie mögliche Gründe der Ablehnung (mindestens 3). Welche zusätzlichen Risiken können während des Bieterverfahrens aufgetreten sein? Erklären Sie, welche möglichen Risikominimierungsmaßnahmen Sie daher für Ihr Projekt besser vorab etabliert hätten?
 \end{aufgabenstellung}
 
 \vspace*{5mm}
 
-Im UML-Aktivitätsdiagramm (engl. \ac{ad}) in \autoref{fig:activity_diagram} ist der Ablauf des automatischen Scheibenwischerbetriebs modelliert.
-Die Intensität des Regens ist in der Darstellung in die Zustände \enquote{kein Regen}, \enquote{leichter Regen}, \enquote{mäßiger Regen} und \enquote{starker Regen} unterteilt.
-Es wurde auch die manuelle Abschaltung des Scheibenwischers berücksichtigt.
-Nach einem Zeitintervall wird der Regensensor erneut abgefragt, um die Wischgeschwindigkeit entsprechend der aktuellen Regenintensität anzupassen.
-
-Das UML-Aktivitätsdiagramm ist in voller Größe in \autoref{fig:activity_diagram} auf der nächsten Seite dargestellt.
-
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=1\linewidth]{Images/activity_diagramm.pdf}
-	\caption[UML-\ac{ad} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})]{UML-\ac{ad} Scheibenwischer (eigene Darstellung mit \cite{VisualParadigmOnlineProduktivitatssuite})}
-	\label{fig:activity_diagram}
-\end{figure}
-
-\clearpage
-
-% ----------------------------------------------------------------------------------------------------------
-% Kapitel 4: Nebenläufigkeit eingebetteter Systeme
-% ----------------------------------------------------------------------------------------------------------
-\section{Nebenläufigkeit eingebetteter Systeme}
-
-\subsection{Inhärente Nebenläufigkeit eingebetteter Systeme}
-\begin{aufgabenstellung}
-Erläutern Sie, warum eingebettete Systeme inhärent nebenläufig sind und warum dies einen Grund für ihre hohe Entwurfskomplexität darstellt.
-\end{aufgabenstellung}
-
-\vspace*{5mm}
-
-Eingebettete Systeme sind inhärent nebenläufig, da sie simultan auf verschiedene asynchrone Ereignisse reagieren müssen.
-Dies zeigt sich im Scheibenwischersystem: Während das System kontinuierlich Regensensordaten auswertet und die Motorgeschwindigkeit entsprechend anpasst, muss es gleichzeitig auf manuelle Benutzereingaben reagieren können.
-Der Regensensor arbeitet in regelmäßigen Intervallen, unabhängig von der Motorsteuerung oder Benutzereingaben.
-Hinzu kommt eine interrupt gesteuerte Architektur, bei der externe Events wie Sensormessungen oder Timer-Interrupts jederzeit eintreten und die Hauptausführung unterbrechen können.
-
-Die hohe Entwurfskomplexität entsteht durch Race Conditions beim gleichzeitigen Zugriff auf gemeinsame Systemzustände und die Notwendigkeit deterministischer Echtzeitreaktionen trotz paralleler Prozesse und die schwierige Vorhersagbarkeit des Systemverhaltens.
-Darüber hinaus erfordert die Beschränkung auf begrenzte Ressourcen, wie CPU-Zeit, Speicher und Energie, eine sorgfältige Priorisierung und Synchronisation der Tasks.
-Debugging wird zudem erschwert, da timing abhängige Fehler oft nicht reproduzierbar sind und spezielle Analysetools benötigt werden, um Race Conditions oder Deadlocks aufzuspüren \cite{cummingsManagingConcurrencyComplex, ConcurrencyInterruptsMicrocontrollers}.
-
-\newpage
-
-\subsection{POSIX Threads: Umsetzung der Nebenläufigkeit}
-\begin{aufgabenstellung}
-Nebenläufige Tasks werden in der Programmiersprache C mithilfe von POSIX Threads implementiert. Erklären Sie kurz, wie Threads die Nebenläufigkeit implementieren.
-\end{aufgabenstellung}
-
-\vspace*{5mm}
-
-POSIX Threads implementieren Nebenläufigkeit durch die Aufteilung der Programmlogik in mehrere parallel ausführbare Einheiten.
-Jeder Thread erhält einen eigenen Ausführungskontext: Stack, Programmzähler, Register, während alle Threads denselben Adressraum teilen.
-Das ermöglicht effizienten Datenaustausch über gemeinsame Variablen \cite{LinuxTutorialPOSIX}.
-
-Das Betriebssystem verwendet präemptives Scheduling, um Threads zeitscheibenbasiert oder prioritätsgesteuert auf verfügbare CPU-Kerne zu verteilen.
-Moderne pthread-Implementierungen nutzen Kernel-Level-Threads für echte Parallelität auf Mehrkernsystemen.
-Synchronisationsmechanismen wie Mutexes und Condition Variables koordinieren den Zugriff auf gemeinsame Ressourcen.
-
-\newpage
-
-\subsection{Zusätzliche Thread-Funktionen im Scheibenwischersystem}
-\begin{aufgabenstellung}
-Betrachten Sie wieder das Scheibenwischersystem. Das Folgende zeigt eine Funktion (im Pseudocode), die ein Thread ausführen kann.
-Geben Sie zwei weitere Funktionen an, die beim Scheibenwischersystem als Threads ausgeführt werden können.
-\end{aufgabenstellung}
-
-\vspace*{5mm}
-
-Im Folgenden zwei Threads für das Scheibenwischersystem. Zum einen der Regensensor-Thread und der Motorsteuerungs-Thread. \newline
-Mit dem Regensensor-Thread wird die Regenintensität kontinuierlich überwacht und die Wischgeschwindigkeit entsprechend angepasst.
-
-\vspace*{5mm}
-
-\begin{lstlisting}[language=C, caption={Regensensor-Thread}]
-void* RainSensor_Thread() {
-    while(1) {
-        int rainIntensity = readRainSensor();
-
-        int wiperSpeed;
-        if(rainIntensity == 0) {
-            wiperSpeed = OFF;
-        }
-        else if(rainIntensity <= LIGHT) {
-            wiperSpeed = SLOW;
-        }
-        else if(rainIntensity <= MODERATE) {
-            wiperSpeed = MEDIUM;
-        }
-        else {
-            wiperSpeed = FAST;
-        }
-
-        writeSpeedToBuffer(wiperSpeed);
-
-        waitSamplingInterval();
-
-        if(isSystemManuallyOff()) break;
-    }
-    return NULL;
-}
-\end{lstlisting}
-
-\newpage
-
-Mit dem Motorsteuerungs-Thread wird die Wischgeschwindigkeit basierend auf den Daten des Regensensors eingestellt und der Wischzyklus gestartet.
-Es wird zudem auch nach dem Wischzyklus überprüft, ob das System manuell ausgeschaltet wurde.
-
-\vspace*{5mm}
-
-\begin{lstlisting}[language=C, caption={Motorsteuerungs-Thread}]
-void* MotorControl_Thread() {
-    while(1) {
-        int currentSpeed = readSpeedFromBuffer();
-
-        switch(currentSpeed) {
-            case OFF:
-                stopMotor();
-                break;
-            case SLOW:
-                setMotorSpeed(SLOW_VALUE);
-                startWipeCycle();
-                break;
-            case MEDIUM:
-                setMotorSpeed(MEDIUM_VALUE);
-                startWipeCycle();
-                break;
-            case FAST:
-                setMotorSpeed(FAST_VALUE);
-                startWipeCycle();
-                break;
-        }
-
-        if(isSystemManuallyOff()) {
-            stopMotor();
-            break;
-        }
-
-        usleep(MOTOR_CYCLE_DELAY);
-    }
-    return NULL;
-}
-\end{lstlisting}
-
-\newpage
-
-\subsection{Kommunikation und Synchronisation der Threads}
-\begin{aufgabenstellung}
-Beschreiben Sie, warum die Threads miteinander kommunizieren oder sich synchronisieren müssen. Geben Sie auch an, wie Sie die Kommunikation oder Synchronisation implementieren würden (nur das Mittel, nicht den Code).
-\end{aufgabenstellung}
-
-\vspace*{5mm}
-
-Die Threads müssen miteinander kommunizieren, weil sie gemeinsame Daten austauschen und koordiniert arbeiten müssen.
-Der Regensensor-Thread bestimmt basierend auf Sensormessungen die erforderliche Motorgeschwindigkeit, die der Motorsteuerungs-Thread umsetzen muss.
-Ohne Kommunikation könnte der Motor nicht auf Änderungen der Regenintensität reagieren.
-
-Die Synchronisation ist erforderlich, um Race Conditions zu vermeiden.
-Wenn beide Threads gleichzeitig auf den gemeinsamen Geschwindigkeitspuffer zugreifen, während der Regensensor-Thread eine neue Geschwindigkeit schreibt und der Motorsteuerungs-Thread diese liest, können inkonsistente Daten entstehen.
-Dies könnte zu unvorhersagbarem Motorverhalten oder Systemfehlern führen.
-Um dies zu verhindern, gibt es die folgenden Mechanismen in der Implementierung:
-
+\subsection{Mögliche Ablehnungsgründe (mind. 3)}
 \begin{itemize}
-  \item \textbf{Mutex (pthread\_mutex\_t)}: Schützt den kritischen Abschnitt beim Zugriff auf den gemeinsamen Geschwindigkeitspuffer und verhindert gleichzeitige Lese-/Schreibzugriffe.
-  \item \textbf{Condition Variables (pthread\_cond\_t)}: Signalisieren Ereignisse zwischen den Threads, z.\,B. wenn der Regensensor-Thread eine neue Geschwindigkeit ermittelt hat oder wenn das System manuell ausgeschaltet wird.
-  \item \textbf{Shared Buffer}: Ein geschützter Speicherbereich zur Übertragung der Geschwindigkeitswerte zwischen den Threads.
-  \item \textbf{Atomic Variables}: Für einfache Statusflags wie den manuellen Ausschaltbefehl, um lockfreie Synchronisation zu ermöglichen.
+  \item Grund~1: % ...
+  \item Grund~2: % ...
+  \item Grund~3: % ...
+  \item (optional) weitere Gründe
 \end{itemize}
 
-Diese Mechanismen gewährleisten Datenintegrität trotz paralleler bzw. überlappender Ausführung der Threads.
+\subsection{Zusätzliche Risiken im Bieterverfahren}
+% z.B. Währungs-/Länderrisiko, Partner-/Lieferantenabhängigkeit, Compliance, Scope Creep, IP-/Datenübernahme, Terminrisiken
 
-% ----------------------------------------------------------------------------------------------------------
-% Kapitel 5: Echtzeitsysteme & Verkehrszeichenerkennung
-% ----------------------------------------------------------------------------------------------------------
-\section{Echtzeitsysteme \& Verkehrszeichenerkennung}
+\subsection{Risikominimierung (präventiv/proaktiv)}
+% \begin{table}[htb!]
+% \centering
+% \caption{Risikoregister (Auszug)}
+% \begin{tabular}{l l l l}
+% \textbf{Risiko} & \textbf{Einfluss} & \textbf{Wahrsch.} & \textbf{Maßnahmen (präventiv/reagierend)} \\
+% \hline
+% % ...
+% \end{tabular}
+% \end{table}
 
-\subsection{Echtzeitsystem-Analyse: Scheibenwischer}
-\begin{aufgabenstellung}
-Ist der Scheibenwischer in Aufgabe 1 ein Echtzeitsystem? Begründen Sie Ihre Antwort?
-\end{aufgabenstellung}
-
-% \vspace*{5mm}
-
-Der Scheibenwischer aus \autoref{sec:state_diagram} ist ein Echtzeitsystem, weil er zeitkritisch auf äußere Ereignisse, wie hier das Fallen von Regen, reagieren muss.
-Die Steuerungssoftware darf die Aktivierung des Wischers bei Regen nicht zu stark verzögern, dass die Sicht des Fahrers zu sehr beeinträchtigt wird.
-Hier kann eine späte Reaktion zu Gefährdungen führen und es müssen alle Rechen- und Sensorzugriffe innerhalb definierter Fristen abgeschlossen sein.
-Da jedoch gelegentliche geringfügige Verzögerungen um wenige Millisekunden nicht unmittelbar katastrophale Folgen haben, handelt es sich um ein weiches Echtzeitsystem \cite{HowAchieveDeterministic}.
-
-\subsection{Beispielhafte Anwendungen der Verkehrszeichenerkennung}
-\begin{aufgabenstellung}
-Beschreiben Sie mithilfe von Beispielen, wie ein Verkehrszeichenerkennungssystem verwendet werden könnte.
-\end{aufgabenstellung}
-
-% \vspace*{5mm}
-
-Verkehrszeichenerkennungssysteme (\ac{tsr}) analysieren in Echtzeit Kamerabilder, um Verkehrszeichen zu identifizieren und deren Information an den Fahrer oder Fahrassistenzsysteme zu übermitteln.
-Beispiele hierfür sind die folgenden Systeme:
-\begin{itemize}
-  \item Anzeige der zulässigen Höchstgeschwindigkeit im Kombiinstrument oder Head-Up-Display, sowie Warnung bei Überschreitung.
-  \item Automatische Anpassung der Geschwindigkeit im adaptiven Tempomaten basierend auf erkannten Geschwindigkeitsbegrenzungen.
-\end{itemize}
-
-\subsection{Echtzeitfähigkeit und Klassifizierung von Verkehrszeichenerkennungssystemen}
-\begin{aufgabenstellung}
-Erläutern Sie, warum Verkehrszeichenerkennungssysteme echtzeitfähig sein müssen. Handelt es sich um harte Echtzeitsysteme? Begründen Sie Ihre Antwort.
-\end{aufgabenstellung}
-
-Verkehrszeichenerkennung muss echtzeitfähig sein, weil erkannte Informationen nur innerhalb eines engen Zeitfensters relevant sind.
-Wird ein Tempolimit zu spät erkannt, kann das Assistenzsystem nicht rechtzeitig die Fahrzeuggeschwindigkeit anpassen und der Fahrer könnte in eine Gefahrenlage geraten bzw. an der Stelle mit Beginn der Geschwindigkeitsbegrenzung noch eine zu hohe Geschwindigkeit fahren.
-
-Da in diesem Beispiel eine einzelne Fristverletzung typischerweise nicht sofort katastrophal ist, es könnte ein verpasstes Schild zu Komforteinbußen oder Bußgeldrisiken führen, wird \ac{tsr} üblicherweise als weiches Echtzeitsystem klassifiziert.
-Harte Echtzeitsysteme erfordern, dass jede Deadline ohne Ausnahme absolut eingehalten wird, was hier nicht in gleicher Weise gefordert ist \cite{HowAchieveDeterministic}.
-Ein Beispiel für ein hartes Echtzeitsystem im Bereich der Fahrzeugtechnik wäre ein Airbag-Steuergerät, bei dem eine Fristverletzung zu lebensbedrohlichen Folgen führen kann.
+\paragraph{Begründung}
+% Welche Maßnahmen hätten die Ablehnungs-/Schadenwahrscheinlichkeit reduziert; Lessons Learned \& nächste Schritte.
 
 \clearpage
 
